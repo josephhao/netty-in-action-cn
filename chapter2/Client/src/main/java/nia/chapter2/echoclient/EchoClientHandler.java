@@ -31,6 +31,11 @@ public class EchoClientHandler
     }
 
     @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("client disconnected");
+    }
+
+    @Override
     //在发生异常时，记录错误并关闭Channel
     public void exceptionCaught(ChannelHandlerContext ctx,
         Throwable cause) {
